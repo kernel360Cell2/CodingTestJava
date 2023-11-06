@@ -1,4 +1,4 @@
-package stonehee.baekjoon;
+package stonehee.baekjoon.stoneHee;
 
 import java.io.BufferedReader;
 import java.io.IOException;
