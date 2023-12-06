@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class Baekjoon3273 {
+
+public class baekjoon3273 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -33,9 +34,13 @@ public class Baekjoon3273 {
 
         System.out.println(cnt);
     }
-    public static int[] toIntArray(String input){
+
+    public static int[] toIntArray(String input) {
         return
                 Arrays.stream(input.split("\\s"))
                         .mapToInt(Integer::parseInt).toArray();
     }
 }
+
+
+
