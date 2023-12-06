@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -20,8 +22,7 @@ public class Main {
 
         for (int i = 1; i < wheel[1]; i++) {
             String[] turn = br.readLine().split(" ");
-
-            int cycleCnt = Integer.parseInt(turn[0]);
+            int cycleCnt = Integer.parseInt(turn[0]) % wheel[0];
 
             currentPos -= cycleCnt;
             if(currentPos < 0) currentPos += wheel[0];
@@ -34,10 +35,19 @@ public class Main {
             pieceArr[currentPos] = turn[1];
         }
 
+        System.out.println(getOrderedResult(wheel, pieceArr, currentPos));
+    }
+
+    private static String getOrderedResult(int[] wheel, String[] pieceArr, int currentPos) {
         StringBuilder sb = new StringBuilder();
         StringBuilder mvTarget = new StringBuilder();
+        Set<String> set = new HashSet<>();
 
         for (int i = 0; i < wheel[0]; i++) {
+            if (!pieceArr[i].equals("?") && !set.add(pieceArr[i])) {
+                return "!";
+            }
+
             if (i < currentPos) {
                 mvTarget.append(pieceArr[i]);
                 continue;
@@ -45,6 +55,6 @@ public class Main {
             sb.append(pieceArr[i]);
         }
         sb.append(mvTarget);
-        System.out.println(sb);
+        return sb.toString();
     }
 }
