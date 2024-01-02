@@ -26,7 +26,7 @@ public class baekjoon19951 {
                     });
 
         }
-        paradizeStatus.forEach(n -> System.out.print(" "));
+        paradizeStatus.forEach(n -> System.out.print(n + " "));
 
     }
 
