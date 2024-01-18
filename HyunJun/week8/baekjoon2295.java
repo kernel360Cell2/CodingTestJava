@@ -25,7 +25,7 @@ public class baekjoon2295 {
 
         Collections.sort(data);
         HashSet<Integer> hashSet = new HashSet<>();
-        int mx = Integer.MAX_VALUE;
+        int mx = Integer.MIN_VALUE;
 
         for (int i = 0; i < data.size() - 2 ; i++) {
             for (int j = 2; j < data.size() ; j++) {
